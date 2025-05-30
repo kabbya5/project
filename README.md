@@ -30,8 +30,9 @@
 - config.php
 - index.php 
       
+### Auth 
 
-- **Register**
+**Register**
   - **Method:** POST  
   - **Endpoint:** `/register`  
   - **Request Body (JSON):**
@@ -44,7 +45,7 @@
     }
     ```
 
-- **Login**
+**Login**
   - **Method:** POST  
   - **Endpoint:** `/login`  
   - **Request Body (JSON):**
@@ -56,4 +57,64 @@
   "email": "alice@example.com",
   "password": "password1"
 }
----
+
+**Logout**
+  - **Method:** POST  
+  - **Endpoint:** `/logout`
+  - Authorization type  none
+  - Header key:Authorization, value: login / register token
+
+## Department 
+  ### Store
+  - **Method:** POST  
+  - **Endpoint:** `/register`  
+  - **Request Body (JSON):**
+    ```json
+    {
+      "name": "Alice",
+      "email": "alice@example.com",
+      "password": "password1",
+      "role": "user"
+    }
+
+    {
+        "name": "Admin",
+        "email": "admin@example.com",
+        "password": "password1"
+        "role": "admin"
+    }
+
+    {
+        "name": "Agent",
+        "email": "agent@example.com",
+        "password": "password1",
+        "role": "agent"
+    }
+        
+    ```
+
+### Store
+- **Method:** POST  
+- **Endpoint:** `/departments`  
+- **Request Body (JSON):**
+  ```json
+  { "name": "Software Development"}
+  { "name": "Technical Support" }
+  { "name": "IT Operations" }
+  ```
+
+### Create
+- **Method:** PUT  
+- **Endpoint:** `/departments/{id}`  
+- **Request Body (JSON):**
+```json
+ { "name": "Software Development update"}
+```
+### Create
+- **Method:** DELETE
+- **Endpoint:** `/departments/{id}`  
+
+
+
+
+  
