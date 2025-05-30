@@ -119,17 +119,16 @@
 - **Method:** PUT
 - **Endpoint:** `/tickets/{id}/status`
 --- json
- {
-  {"status":"in_progress"}
 
-}
+  {"status":"in_progress"}
+---
 ### Update status 
 - **Method:** PUT
 - **Endpoint:** `tickets/{id}/notes`
 --- json
-{
+
 {"Note":"Note"}
-}
+--
 
    
 
