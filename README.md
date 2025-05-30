@@ -101,7 +101,39 @@
 ```
 ### Delete
 - **Method:** DELETE
-- **Endpoint:** `/departments/{id}`  
+- **Endpoint:** `/departments/{id}`
+## Ticket
+**Store**
+- **Method:** POST
+- **Endpoint:** `/tickets`  
+- **Request Body (JSON):**
+```json
+ {
+    "title": "Cannot login to account",
+    "description": "I am unable to login since yesterday.",
+    "department_id": 1
+    "attachment" : "file path",
+  }
+```
+### Update status 
+- **Method:** PUT
+- **Endpoint:** `/tickets/{id}/status`
+--- json
+ {
+  {"status":"in_progress"}
+
+}
+### Update status 
+- **Method:** PUT
+- **Endpoint:** `tickets/{id}/notes`
+--- json
+{
+{"Note":"Note"}
+}
+
+   
+
+
 
 
 
