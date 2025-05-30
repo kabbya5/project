@@ -36,40 +36,7 @@
   - **Method:** POST  
   - **Endpoint:** `/register`  
   - **Request Body (JSON):**
-    ```json
-    {
-      "name": "Alice",
-      "email": "alice@example.com",
-      "password": "password1",
-      "role": "user"
-    }
-    ```
-
-**Login**
-  - **Method:** POST  
-  - **Endpoint:** `/login`  
-  - **Request Body (JSON):**
-    ```json
-    {
-      "email": "alice@example.com",
-      "password": "password1"
-    }
-  "email": "alice@example.com",
-  "password": "password1"
-}
-
-**Logout**
-  - **Method:** POST  
-  - **Endpoint:** `/logout`
-  - Authorization type  none
-  - Header key:Authorization, value: login / register token
-
-## Department 
-  ### Store
-  - **Method:** POST  
-  - **Endpoint:** `/register`  
-  - **Request Body (JSON):**
-    ```json
+     ```json
     {
       "name": "Alice",
       "email": "alice@example.com",
@@ -92,6 +59,28 @@
     }
         
     ```
+    ```
+
+**Login**
+  - **Method:** POST  
+  - **Endpoint:** `/login`  
+  - **Request Body (JSON):**
+    ```json
+    {
+      "email": "alice@example.com",
+      "password": "password1"
+    }
+  "email": "alice@example.com",
+  "password": "password1"
+}
+
+**Logout**
+  - **Method:** POST  
+  - **Endpoint:** `/logout`
+  - Authorization type  none
+  - Header key:Authorization, value: login / register token
+
+## Department 
 
 ### Store
 - **Method:** POST  
@@ -103,14 +92,14 @@
   { "name": "IT Operations" }
   ```
 
-### Create
+### Update
 - **Method:** PUT  
 - **Endpoint:** `/departments/{id}`  
 - **Request Body (JSON):**
 ```json
  { "name": "Software Development update"}
 ```
-### Create
+### Delete
 - **Method:** DELETE
 - **Endpoint:** `/departments/{id}`  
 
