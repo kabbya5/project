@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('time_logs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('client_id')->constrained()->onDelete('cascade');
-            $table->string('title');
+            $table->foreignId('project_id')->constrained()->onDelete('cascade');
+            $table->enum('tag', ['billable', 'non-billable'])->default('non-billable');
+            $table->dateTime('start_time');
+            $table->dateTime('end_time')->nullable();
             $table->text('description')->nullable();
-            $table->enum('status', ['active', 'completed'])->default('active');
-            $table->date('deadline')->nullable();
+            $table->decimal('hours', 5, 2)->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('projects');
+        Schema::dropIfExists('time_logs');
     }
 };

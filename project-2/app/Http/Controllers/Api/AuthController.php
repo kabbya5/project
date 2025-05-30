@@ -19,7 +19,7 @@ class AuthController extends Controller
 
         $user = Auth::user();
 
-        $token = $user->createToken('api-token')->plainTextToken;
+        $token = $user->createToken('ApiToken')->plainTextToken;
 
         return response()->json([
             'token' => $token,
@@ -58,8 +58,6 @@ class AuthController extends Controller
 
         $user->currentAccessToken()->delete();
 
-        return response()->json([
-            'message' => 'Logged out successfully'
-        ]);
+        return response()->json(['message' => 'Logged out']);
     }
 }

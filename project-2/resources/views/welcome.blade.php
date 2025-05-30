@@ -37,10 +37,10 @@
   </style>
 </head>
 <body>
-    <h4>Token-Based Auth API – JSON Samples</h4>
+    <h4>JSON Samples</h4>
 
 
-    <p> /register </p>
+    <p> /register (post) </p>
 
     <p>Create User</p>
 
@@ -82,14 +82,32 @@
         </pre>
   </div>
 
-  <p> /departments (post) </p>
+    <p> / Time Log </p>
 
-  <p> Create </p>
+    <p> Filter By Day Week  </p>
+    <p> api/time-logs {get}</p>
+
+    <div class="json-box">
+        <button class="copy-btn" data-target="deleteJson">Copy</button>
+        <pre id="deleteJson">
+        {
+            "date": "2025-05-27",
+            "type": "week"
+        }
+        </pre>
+    </div>
+
+  <p> Store </p>
 
   <div class="json-box">
     <button class="copy-btn" data-target="deleteJson">Copy</button>
     <pre id="deleteJson">
-      { "name": "Software Development"}
+    {
+        "project_id": 1,
+        "tag": "billable",
+        "start_time": "2025-05-28 09:00:00",
+        "description": "Worked on frontend module for client dashboard.",
+    }
     </pre>
   </div>
 
@@ -100,82 +118,40 @@
     </pre>
   </div>
 
-  <div class="json-box">
-    <button class="copy-btn" data-target="deleteJson">Copy</button>
-    <pre id="deleteJson">
-      { "name": "IT Operations" }
-    </pre>
-  </div>
-
-   <p> /departments/{id} (put) </p>
-
-  <p> update </p>
+  <p> time-logs/update/{time_log} (put) </p>
 
   <div class="json-box">
     <button class="copy-btn" data-target="deleteJson">Copy</button>
     <pre id="deleteJson">
-      { "name": "Software Development update"}
+        {
+            "project_id": 1,
+            "tag": "billable",
+            "start_time": "2025-05-28 09:00:00",
+            "description": "Worked on frontend module for client dashboard.",
+            "end_time": "2025-05-28 17:30:00",
+            "hours": 8.5
+        }
     </pre>
   </div>
 
+   <p> time-logs/end/{time_log} (put) </p>
 
-   <p> /departments/{id} (delete) </p>
+  <p> End </p>
+
+   <p> /Poject Report (get) </p>
 
   <p> Delete </p>
 
   <div class="json-box">
     <button class="copy-btn" data-target="deleteJson">Copy</button>
     <pre id="deleteJson">
-      { "name": "Software Development update"}
+        {
+            "client_id":"1",
+            "from_date":"2025-05-12",
+            "to_date":"2025-05-12"
+        }
     </pre>
   </div>
-
-   <p> /tickets/ (posts) </p>
-
-  <p> Supmit Titcket </p>
-
-  <div class="json-box">
-    <button class="copy-btn" data-target="submitjson">Copy</button>
-    <pre id="submitjson">
-      {
-        "title": "Cannot login to account",
-        "description": "I am unable to login since yesterday.",
-        "department_id": 1
-      }
-
-    </pre>
-  </div>
-
-  <p> For file update it should be attathment field name </p>
-
-  <p>/tickets/{id}/status {put) </p>
-
-  <p> Ticket status change </p>
-
-
-  <div class="json-box">
-    <button class="copy-btn" data-target="submitjson">Copy</button>
-    <pre id="submitjson">
-      {
-        {"status":"in_progress"}
-      }
-
-    </pre>
-  </div>
-
-  <p>tickets/{id}/notes</p>
-  <p> Add note </p>
-
-  <div class="json-box">
-    <button class="copy-btn" data-target="submitjson">Copy</button>
-    <pre id="submitjson">
-      {
-        {"note":"note"}
-      }
-
-    </pre>
-  </div>
-
 
   <div class="notify" id="notify">Copied!</div>
 
