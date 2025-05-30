@@ -31,5 +31,29 @@
 - index.php 
       
 
-## Auth System 
-- Create,
+- **Register**
+  - **Method:** POST  
+  - **Endpoint:** `/register`  
+  - **Request Body (JSON):**
+    ```json
+    {
+      "name": "Alice",
+      "email": "alice@example.com",
+      "password": "password1",
+      "role": "user"
+    }
+    ```
+
+- **Login**
+  - **Method:** POST  
+  - **Endpoint:** `/login`  
+  - **Request Body (JSON):**
+    ```json
+    {
+      "email": "alice@example.com",
+      "password": "password1"
+    }
+  "email": "alice@example.com",
+  "password": "password1"
+}
+---
