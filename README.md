@@ -50,11 +50,11 @@
   - **Request Body (JSON):**
     ```json
     {
-        "client_id":"1",
+        "project_id":"1",
         "from_date":"2025-05-12",
         "to_date":"2025-05-12"
     }
-  ```
+
 ** Store **
   - **Method:** POST  
   - **Endpoint:** `api/time-logs/start`  
