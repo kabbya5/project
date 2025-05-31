@@ -6,7 +6,7 @@
   - **Method:** POST  
   - **Endpoint:** `/api/register`  
   - **Request Body (JSON):**
-     ```json
+     ``` json
      {
         "name": "Alice",
         "email": "alice@example.com",
