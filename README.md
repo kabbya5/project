@@ -1,5 +1,19 @@
 
 # Freelance Time Tracker API
+### Work List 
+- [x] Authentication system
+- [ ] Not using email verification
+- [x] Time log store and update
+- [x] Project system
+### Bonus 
+- [x] PDF generation using queued job and send email after complete.
+- [x] Seeder and Factory
+- [x] Feature Tests
+  - [ ] Authentication Test
+  - [ ] Project Test
+  - [ ] Time Log Test (will be updated tomorrow)
+- [x] Task Scheduler
+  - [x] Send email notification when a user logs 8+ hours in a day
 ### Auth 
 
 **Register**
