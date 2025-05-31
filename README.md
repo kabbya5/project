@@ -122,7 +122,7 @@
 
   {"status":"in_progress"}
 ---
-### Update status 
+### Add Note
 - **Method:** PUT
 - **Endpoint:** `tickets/{id}/notes`
 ``` json
