@@ -24,7 +24,7 @@
       "email": "alice@example.com",
       "password": "password1"
     }
-  ```
+
 ### Authorization: Bearer sanctum_token
 
 **Logout**
