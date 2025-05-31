@@ -125,10 +125,9 @@
 ### Update status 
 - **Method:** PUT
 - **Endpoint:** `tickets/{id}/notes`
---- json
-
-{"Note":"Note"}
----
+``` json
+{"Note":"note details"}
+```
    
 
 
