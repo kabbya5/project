@@ -16,16 +16,18 @@ class GenerateTimeLogReportPdf implements ShouldQueue
 {
     use Queueable;
 
-    protected $date;
+    protected $from_date;
+    protected $to_date;
     protected $project_id;
     protected $user_id;
 
     /**
      * Create a new job instance.
      */
-    public function __construct($date,$project_id, $user_id)
+    public function __construct($from_date, $to_date,$project_id, $user_id)
     {
-        $this->date = $date;
+        $this->from_date = $from_date;
+        $this->to_date = $to_date;
         $this->project_id = $project_id;
         $this->user_id = $user_id;
     }
@@ -36,7 +38,8 @@ class GenerateTimeLogReportPdf implements ShouldQueue
     public function handle(): void
     {
         try{
-            $date= $this->date;
+            $from_date = $this->from_date;
+            $to_date = $this->to_date;
             $user_id = $this->user_id;
             $project_id = $this->project_id;
 
@@ -49,8 +52,12 @@ class GenerateTimeLogReportPdf implements ShouldQueue
 
             DB::table('time_logs')->join('projects', 'time_logs.project_id', '=', 'projects.id')
                 ->where('time_logs.user_id',$user_id)
-                ->when($date, function($q) use ($date){
-                    $q->whereDate('time_logs.date', $date);
+                ->when($from_date && $to_date, function($q) use ($from_date, $to_date){
+                    $q->whereBetween('time_logs.date', [$from_date, $to_date]);
+                })->when($from_date && !$to_date, function($q) use ($from_date){
+                    $q->whereDate('time_logs.date', $from_date);
+                })->when(!$from_date && $to_date, function($q) use ($to_date){
+                    $q->whereDate('time_logs.date', $to_date);
                 })->when($project_id, function($q) use ($project_id){
                     $q->where('time_logs.project_id', $project_id);
                 })

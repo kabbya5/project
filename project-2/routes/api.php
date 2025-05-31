@@ -16,7 +16,7 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
 
- Route::put('/time-logs/end/{time_log}', [TimeLogController::class, 'end']);
+Route::put('/time-logs/end/{time_log}', [TimeLogController::class, 'end']);
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 
@@ -26,8 +26,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/time-logs/start', [TimeLogController::class, 'store']);
     Route::put('/time-logs/update/{time_log}', [TimeLogController::class, 'update']);
 
-
     Route::get('/time-log/generate/pdf',[TimeLogController::class, 'generatePdf']);
-
     Route::get('project/report', [ReportController::class, 'projectReport']);
 });

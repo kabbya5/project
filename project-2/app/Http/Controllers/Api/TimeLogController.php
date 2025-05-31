@@ -29,6 +29,9 @@ class TimeLogController extends Controller
     }
 
     public function update(Request $request, TimeLog $time_log){
+        if($time_log->status === 'complete'){
+            return response()->json(['message' => "The completed time log can't be deleted"],401);
+        }
         $time_log->update($request->validate([
             'project_id' => 'required|exists:projects,id',
             'hours' => 'required|numeric|min:0',
@@ -51,10 +54,11 @@ class TimeLogController extends Controller
     }
 
     public function generatePdf(Request $request){
-        $date = $request->date;
+        $from_date = $request->date;
+        $to_date = $request->to_date;
         $project_id = $request->project_id;
         $user_id = 1;
-        GenerateTimeLogReportPdf::dispatch($date, $project_id, $user_id);
+        GenerateTimeLogReportPdf::dispatch($from_date, $to_date, $project_id, $user_id);
 
         return response()->json(['message' => 'The report pdf processing. after complete it you will get message']);
     }
