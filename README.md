@@ -1,4 +1,87 @@
-# Pure php project 1
+
+# Freelance Time Tracker API
+### Auth 
+
+**Register**
+  - **Method:** POST  
+  - **Endpoint:** `/api/register`  
+  - **Request Body (JSON):**
+     ```json
+     {
+        "name": "Alice",
+        "email": "alice@example.com",
+        "password": "password1",
+    }
+     
+    ```
+
+**Login**
+  - **Method:** POST  
+  - **Endpoint:** `api/login`  
+  - **Request Body (JSON):**
+    ```json
+     {
+      "email": "alice@example.com",
+      "password": "password1"
+    }
+  ```
+### Authorization: Bearer sanctum_token
+
+**Logout**
+  - **Method:** POST  
+  - **Endpoint:** `api/logout`
+  - Authorization type  Bearer
+  - Header key: Authorization, value: sanctum_token
+### Time Log
+** Filter by week/ day  **
+  - **Method:** GET
+  - **Endpoint:** `api/time-logs`  
+  - **Request Body (JSON):**
+    ```json
+    {
+        "date": "2025-05-27",
+        "type": "week" // day
+    }
+  ```
+
+** Time log Pdf **
+  - **Method:** GET
+  - **Endpoint:** `api/time-log/generate/pdf`  
+  - **Request Body (JSON):**
+    {
+        "client_id":"1",
+        "from_date":"2025-05-12",
+        "to_date":"2025-05-12"
+    }
+  ```
+** Store **
+  - **Method:** POST  
+  - **Endpoint:** `api/time-logs/start`  
+  - **Request Body (JSON):**
+    ```json
+     {
+        "project_id": 1,
+        "tag": "billable",
+        "start_time": "2025-05-28 09:00:00",
+        "description": "Worked on frontend module for client dashboard.",
+    }
+  ```
+** Update **
+  - **Method:** PUT  
+  - **Endpoint:** `api/time-logs/update/{time_log}`  
+  - **Request Body (JSON):**
+    ```json
+     {
+          "project_id": 1,
+          "tag": "billable",
+          "start_time": "2025-05-28 09:00:00",
+          "description": "Worked on frontend module for client dashboard.",
+          "end_time": "2025-05-28 17:30:00",
+      }
+  ```
+
+
+# Mini Support Ticketing System
 ### Project Stucture 
 - app
   - Controllers
