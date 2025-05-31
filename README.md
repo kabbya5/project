@@ -10,7 +10,7 @@
      {
         "name": "Alice",
         "email": "alice@example.com",
-        "password": "password1",
+        "password": "password1"
     }
      
     ```
