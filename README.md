@@ -32,7 +32,7 @@
   - **Endpoint:** `api/logout`
   - Authorization type  Bearer
   - Header key: Authorization, value: sanctum_token
-### Time Log
+###Time Log
 ** Filter by week/ day  **
   - **Method:** GET
   - **Endpoint:** `api/time-logs`  
@@ -40,11 +40,10 @@
     ```json
     {
         "date": "2025-05-27",
-        "type": "week" // day
+        "type": "week" 
     }
-  ```
-
-** Time log Pdf **
+    
+**Time log Pdf**
   - **Method:** GET
   - **Endpoint:** `api/time-log/generate/pdf`  
   - **Request Body (JSON):**
@@ -55,7 +54,7 @@
         "to_date":"2025-05-12"
     }
 
-** Store **
+**Store**
   - **Method:** POST  
   - **Endpoint:** `api/time-logs/start`  
   - **Request Body (JSON):**
@@ -66,8 +65,8 @@
         "start_time": "2025-05-28 09:00:00",
         "description": "Worked on frontend module for client dashboard.",
     }
-  ```
-** Update **
+
+**Update**
   - **Method:** PUT  
   - **Endpoint:** `api/time-logs/update/{time_log}`  
   - **Request Body (JSON):**
@@ -79,7 +78,18 @@
           "description": "Worked on frontend module for client dashboard.",
           "end_time": "2025-05-28 17:30:00",
       }
-  ```
+
+**Project Report**
+  - **Method:** GET  
+  - **Endpoint:** `api/project/report`  
+  - **Request Body (JSON):**
+    ```json
+     {
+        "client_id":"1",
+        "from_date":"2025-05-12",
+        "to_date":"2025-05-12"
+    }
+  
 
 
 # Mini Support Ticketing System
