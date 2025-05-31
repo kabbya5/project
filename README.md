@@ -107,6 +107,19 @@
 
 
 # Mini Support Ticketing System
+### Work List 
+- [x] Authentication system
+- [x] Token Base Middlewars
+  - [ ]  Auth Middleware
+  - [ ]  Admin Middleware
+  - [ ]  Agent middleware 
+- [ ] Not using email verification
+- [x] Department store and update (only for admin
+- [x] Ticket store and update
+- [x] Agent assign ticket by himself,
+- [x] Add notes
+### Bonus 
+- [x] Add file upload support for ticket attachments.
 ### Project Stucture 
 - app
   - Controllers
