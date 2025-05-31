@@ -48,6 +48,7 @@
   - **Method:** GET
   - **Endpoint:** `api/time-log/generate/pdf`  
   - **Request Body (JSON):**
+    ```json
     {
         "client_id":"1",
         "from_date":"2025-05-12",
